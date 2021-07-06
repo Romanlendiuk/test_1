@@ -44,9 +44,14 @@ let setDat=0
 $(function(){
 	$("#datepicker").datepicker({
 		onSelect: function(date){
+      // if (chek[i].checked){
+      //   chek.parentNode.removeChild(chek)
+      // }
+      //  else{         
+      //  }
 			$('#datepicker_value').val(date)
      setDat=date
-			setTime()
+     setTime(setDat)
      }
 	});
 	$("#datepicker").datepicker("setDate", $('#datepicker_value').val());
@@ -70,7 +75,7 @@ function setTime(){
   for (let i=0; i<total; i++){      
     let calendar = document.createElement('div')
     calendar.classList.add('time_chek')
-    let tim =`<input class="time" type="checkbox" id="${id}" value="${timeChek[i]}"><label for="${id}">${timeChek[i]}</label>`
+    let tim =`<input class="time" type="radio" name="radio1" id="${id}" value="${timeChek[i]}"><label for="${id}">${timeChek[i]}</label>`
     id ++
     calendar.innerHTML=tim
     calendarTime.append(calendar) 
@@ -87,7 +92,7 @@ document.querySelector('.container_footer_button').addEventListener('click', ()=
       selectedTime = chek[i].value
       console.log('selected' + ' - ' + setDat + '   ' + selectedTime)
       break
-    }    
+    }     
   }
   
 })
