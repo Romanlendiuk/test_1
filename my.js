@@ -46,6 +46,7 @@ $(function(){
 		onSelect: function(date){
 			$('#datepicker_value').val(date)
      setDat=date
+			setTime()
      }
 	});
 	$("#datepicker").datepicker("setDate", $('#datepicker_value').val());
@@ -76,7 +77,7 @@ function setTime(){
 }
 }
 
-setTime()
+
 
 
 document.querySelector('.container_footer_button').addEventListener('click', ()=>{
